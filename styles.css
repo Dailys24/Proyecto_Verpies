@@ -1,0 +1,1390 @@
+/* --- Estilos Generales y Reseteos --- */
+html {
+    scroll-behavior: smooth; /* Añadido para el scroll suave */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Barra Superior (Top Bar) --- */
+.top-bar {
+    background-color: #ffffff; /* Cambiado a blanco! */
+    color: #333; /* Cambiado el color del texto a un gris oscuro para que sea legible sobre fondo blanco */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    border-bottom: 1px solid #eee; /* Opcional: añade una línea divisoria sutil */
+}
+
+.top-bar .contact-info,
+.top-bar .social-icons {
+    display: flex;
+    align-items: center;
+    margin: 5px 0; /* Espacio vertical para elementos envueltos */
+}
+
+.top-bar .contact-info a {
+    color: #333; /* También cambiado el color del enlace para que sea visible sobre fondo blanco */
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.top-bar .contact-info img {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.top-bar .social-icons img {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+
+/* --- Barra de Navegación (Navbar) --- */
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Asegura que la navbar esté siempre visible y encima */
+    min-height: 80px; /* Ajusta según el alto real de tu barra */
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar .logo-img {
+    height: 50px; /* Ajusta el tamaño del logo */
+    margin-right: 10px;
+    border-radius: 8px; /* Bordes redondeados para el logo */
+}
+
+.navbar .logo span {
+    font-size: 0.7em;
+    font-weight: normal;
+    display: block;
+    line-height: 1.2;
+    color: #555;
+    margin-left: 10px; /* ¡NUEVO! Añade un margen izquierdo para separar el texto */
+}
+
+.navbar nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar nav ul li a {
+    position: relative;
+    display: inline-block;
+    font-family: 'Montserrat', Arial, sans-serif; /* <-- Fuente bonita */
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #555;
+    text-decoration: none;
+    font-size: 1.15em;
+    padding: 8px 0;
+    transition: color 0.3s;
+}
+.navbar nav ul li a::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    background: #00cfff;
+    border-radius: 2px;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+
+.navbar nav ul li a:hover,
+.navbar nav ul li a:focus {
+    color: #00cfff;
+}
+
+.navbar nav ul li a:hover::after,
+.navbar nav ul li a:focus::after,
+.navbar nav ul li a.active::after {
+    width: 100%;
+}
+
+.navbar nav ul li a.active {
+    color: #00cfff;
+}
+
+.navbar nav ul li a:hover::after,
+.navbar nav ul li a.active::after {
+    width: 100%;
+}
+
+.navbar nav ul li a.active {
+    color: #00cfff; /* Color del enlace activo */
+}
+
+.navbar .buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* --- Estilos para los iconos de Font Awesome en la barra de navegación --- */
+.navbar .buttons i {
+    font-size: 40px; /* Ajustado para que coincida con el tamaño de los iconos grandes */
+    transition: opacity 0.3s ease; /* Transición para el efecto hover */
+}
+
+.navbar .buttons .fa-instagram {
+    color: #E1306C; /* Color de Instagram */
+}
+
+.navbar .buttons .fa-whatsapp {
+    color: #25D366; /* Color de WhatsApp */
+}
+
+.navbar .buttons i:hover {
+    opacity: 0.8; /* Efecto hover para que coincida */
+}
+
+
+/* Sección Hero (Slider Principal) --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Altura del slider */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.6s ease-in-out; /* Transición para el cambio de fondo */
+    display: flex; /* Para centrar el contenido de los slides */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    overflow: hidden; /* Asegura que los slides no se salgan */
+    margin-bottom: 50px; /* AÑADIDO: Espacio debajo del slider */
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+    z-index: 1; /* Para que la sombra esté por encima de la imagen de fondo pero por debajo del contenido */
+}
+
+.slides-container {
+    position: absolute; /* Permite posicionamiento absoluto para los slides */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Para que los slides estén por encima de la sombra */
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Por defecto, los slides están ocultos */
+    transition: opacity 0.8s ease-in-out; /* Transición suave al cambiar de slide */
+    pointer-events: none; /* Deshabilita clics en slides ocultos */
+}
+
+.hero-slide.active {
+    opacity: 1; /* Hace visible el slide activo */
+    pointer-events: auto; /* Habilita clics en el slide visible */
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    max-width: 800px; /* Ancho máximo para el contenido del slider */
+    position: relative; /* Asegura que esté por encima de la sombra */
+    z-index: 3;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Sombra para que el texto sea legible */
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+.hero-content ul {
+    list-style: disc; /* Vuelven las viñetas */
+    padding-left: 20px;
+    text-align: left;
+    display: inline-block; /* Para centrar la lista */
+}
+
+.hero-content ul li {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100; /* Asegura que los botones estén sobre los slides */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.slider-btn.prev {
+    left: 20px;
+}
+
+.slider-btn.next {
+    right: 20px;
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 100; /* Asegura que los puntos estén sobre los slides */
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: 50px; /* Asegura espacio al final de la página */
+}
+
+
+/* --- Media Queries Generales (Responsividad) --- */
+@media (min-width: 769px) { /* Solo aplica estos estilos para pantallas de más de 768px */
+    .navbar nav {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: auto; /* Ancho automático para que ocupe solo lo necesario */
+    }
+    .navbar nav ul {
+        flex-direction: row; /* Vuelve a poner los elementos en fila */
+    }
+}
+
+
+@media (max-width: 992px) {
+    .navbar nav ul li {
+        margin-left: 20px;
+    }
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .hero-content p {
+        font-size: 1.1em;
+    }
+    .hero {
+        height: 500px;
+    }
+
+    /* Reducir gap en about-content y service-highlight */
+    .about-content, .service-highlight, .social-promo, .featured-area {
+        gap: 20px;
+    }
+
+    /* Full-width image slider */
+    .full-width-image-content h2 {
+        font-size: 40px;
+    }
+    .full-width-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+    .navbar .logo {
+        margin-bottom: 10px;
+    }
+    .navbar nav {
+        width: 100%;
+        margin-bottom: 10px;
+        position: static; /* Remove absolute positioning on mobile */
+        transform: none; /* Remove transform on mobile */
+    }
+    .navbar nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px; /* Reduce gap for vertical menu */
+    }
+    .navbar nav ul li {
+        margin: 5px 0;
+    }
+    .navbar .buttons {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .hero {
+        height: 400px;
+    }
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .slider-btn {
+        padding: 10px 15px;
+        font-size: 20px;
+    }
+    .dot {
+        height: 12px;
+        width: 12px;
+    }
+
+    /* Ajustes para las secciones movidas de Nosotros */
+    .page-hero {
+        height: 250px;
+    }
+    .page-hero-content h1 {
+        font-size: 40px;
+    }
+    .page-hero-content p {
+        font-size: 18px;
+    }
+
+    .about-content, .service-highlight, .social-promo, .featured-area {
+        flex-direction: column; /* Apilar en pantallas pequeñas */
+        text-align: center;
+    }
+
+    .about-text, .service-highlight-content, .social-promo-content, .featured-area .content {
+        max-width: 100%; /* Ocupar todo el ancho disponible */
+        min-width: unset; /* Reiniciar min-width */
+    }
+
+    .service-highlight-content h2 {
+        font-size: 32px;
+    }
+    .service-highlight-content h3 {
+        font-size: 24px;
+    }
+    .full-width-image {
+        height: 250px;
+    }
+    .full-width-image-content h2 {
+        font-size: 32px;
+    }
+    .social-promo-content h2 {
+        font-size: 28px;
+    }
+    .social-icons-large {
+        font-size: 32px;
+        gap: 20px;
+    }
+
+    /* FAQ section */
+    .faq-section h2 {
+        font-size: 32px;
+    }
+    .faq-item h3 {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+    .faq-answer {
+        padding: 0 15px;
+    }
+    .faq-item.active .faq-answer {
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        font-size: 0.8em;
+        padding: 8px 10px;
+    }
+    .navbar .logo {
+        font-size: 1.2em;
+    }
+    .navbar .logo-img {
+        height: 40px;
+    }
+    .navbar nav ul li {
+        margin: 3px 0;
+        font-size: 0.9em;
+    }
+
+    .hero {
+        height: 300px;
+    }
+    .hero-content h1 {
+        font-size: 1.5em;
+    }
+    .hero-content p {
+        font-size: 0.9em;
+    }
+    .hero-content ul {
+        padding-left: 15px;
+    }
+    .hero-content ul li {
+        font-size: 0.9em;
+    }
+    .slider-btn {
+        padding: 8px 12px;
+        font-size: 18px;
+    }
+    .slider-btn.prev {
+        left: 10px;
+    }
+    .slider-btn.next {
+        right: 10px;
+    }
+    .dot {
+        height: 10px;
+        width: 10px;
+    }
+
+    /* Más ajustes para las secciones movidas de Nosotros */
+    .page-hero {
+        height: 200px;
+        margin-bottom: 30px;
+    }
+    .page-hero-content h1 {
+        font-size: 32px;
+    }
+    .page-hero-content p {
+        font-size: 16px;
+    }
+    .about-section, .service-highlight, .full-width-image, .social-promo, .featured-area, .faq-section {
+        padding: 30px 15px;
+        margin-bottom: 30px;
+    }
+    .about-text h2, .service-highlight-content h2, .social-promo-content h2, .featured-area h2, .faq-section h2 {
+        font-size: 28px;
+    }
+    .about-text p, .service-highlight-content p, .social-promo-content p, .featured-area p, .faq-section p {
+        font-size: 16px;
+    }
+    .service-highlight-content h3 {
+        font-size: 20px;
+    }
+    .full-width-image {
+        height: 200px;
+    }
+    .full-width-image-content h2 {
+        font-size: 28px;
+    }
+    .social-icons-large {
+        font-size: 28px;
+        gap: 15px;
+    }
+
+    /* FAQ section */
+    .faq-section h2 {
+        font-size: 28px;
+    }
+    .faq-item h3 {
+        font-size: 0.9em;
+        padding: 10px 12px;
+    }
+}
+
+
+/* --- Estilos para las secciones de "Nosotros" movidas a "Inicio" --- */
+
+/* Hero para páginas internas (ahora usado dentro de la única página) */
+.page-hero {
+    height: 300px; /* Un poco más pequeña que el hero principal */
+    background-image: url('fotos/LogoVerPies2.png'); /* ¡IMAGEN ACTUALIZADA! */
+    background-size: contain; /* ¡MODIFICADO! */
+    background-repeat: no-repeat; /* ¡MODIFICADO! */
+    background-position: center; /* ¡MODIFICADO! */
+    background-color: white; /* ¡NUEVO: RELLENA EL ESPACIO RESTANTE CON BLANCO! */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 0; /* Asegura que la sombra y contenido estén encima */
+    margin-bottom: 50px; /* Añadido espacio inferior */
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6); /* Sombra más oscura para texto legible */
+    z-index: 1;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.page-hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.page-hero-content p {
+    font-size: 20px;
+}
+
+/* Sección de Quiénes Somos (Visión y Misión) */
+.about-section {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    margin-bottom: 50px; /* Added bottom space */
+    /* REMOVIDO: margin-top: 50px; */ /* Eliminado para que el margen inferior de .service-highlight lo defina el espacio */
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+    align-items: center;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    max-width: 1200px;
+    margin: 0 auto 50px auto; /* Centra la sección y añade espacio abajo */
+    gap: 40px; /* Espacio entre el texto y la imagen */
+}
+
+.about-content.reverse-layout {
+    flex-direction: row-reverse; /* Cambia el orden para imagen-texto */
+}
+
+.about-text {
+    flex: 1; /* Ocupa el espacio disponible */
+    min-width: 300px; /* Ancho mínimo para que el texto no se comprima demasiado */
+    max-width: 550px; /* Ancho máximo para el texto */
+}
+
+.about-text h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Sección de Resaltado de Servicio (Tus Pies, Nuestra Misión) */
+.service-highlight {
+    background-color: #fff;
+    padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto; /* MODIFICADO: Agregado margin-bottom para controlar el espacio inferior */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.service-highlight-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+}
+
+.service-highlight-content h2 {
+    font-size: 40px;
+    color: #00cfff; /* Color del botón azul */
+    margin-bottom: 10px;
+}
+
+.service-highlight-content h3 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.service-highlight-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.service-highlight-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+    text-align: center;
+}
+
+.service-highlight-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Sección de Imagen de Ancho Completo */
+.full-width-image {
+    height: 350px;
+    background-size: cover; /* Cambiado a cover para el slider */
+    background-position: center;
+    transition: background-image 0.6s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+    overflow: hidden; /* Asegura que los slides no se salgan */
+}
+
+.full-width-image::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Sombra para el texto */
+    z-index: 1;
+}
+
+.slides-container-fw {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Para que los slides estén por encima de la sombra */
+}
+
+.full-width-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    pointer-events: none;
+}
+
+.full-width-slide.fw-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.full-width-image-content {
+    position: relative;
+    z-index: 3;
+    color: white;
+    padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.full-width-image-content h2 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.slider-btn-fw {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.slider-btn-fw:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.slider-btn-fw.prev {
+    left: 20px;
+}
+
+.slider-btn-fw.next {
+    right: 20px;
+}
+
+.dots-container-fw {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dots-container-fw {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dot-fw {
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot-fw.fw-active {
+    background-color: #717171;
+}
+
+/* --- Sección de Proceso del Paciente --- */
+.patient-process-section {
+    padding: 60px 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 50px auto; /* Centra la sección y añade espacio abajo */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+.patient-process-section h2 {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.patient-process-section p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 50px; /* Espacio antes de los pasos */
+}
+
+.process-steps {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    justify-content: center; /* Centra los pasos */
+    gap: 30px; /* Espacio entre los pasos */
+}
+
+.step-item {
+    flex: 1; /* Permite que los items ocupen el espacio disponible */
+    min-width: 250px; /* Ancho mínimo para cada paso */
+    max-width: 280px; /* Ancho máximo para mantener un buen diseño */
+    background-color: #f9f9f9; /* Fondo claro para cada paso */
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Sombra para destacar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-item:hover {
+    transform: translateY(-5px); /* Efecto hover para elevar */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.step-number {
+    font-size: 3em; /* Tamaño grande para el número o ícono */
+    color: #00cfff; /* Color principal */
+    margin-bottom: 15px;
+    display: flex; /* Para centrar el ícono */
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* Altura fija para el contenedor del número/ícono */
+}
+
+.step-number i {
+    font-size: 1.2em; /* Ajuste el tamaño del ícono dentro del div */
+}
+
+.step-item h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.step-item p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 992px) {
+    .patient-process-section h2 {
+        font-size: 36px;
+    }
+    .step-item {
+        min-width: 220px;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .patient-process-section h2 {
+        font-size: 32px;
+    }
+    .patient-process-section p {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    .process-steps {
+        flex-direction: column; /* Apilar los pasos en pantallas pequeñas */
+        gap: 20px;
+    }
+    .step-item {
+        max-width: 400px; /* Ancho máximo cuando están apilados */
+        margin: 0 auto; /* Centrar elementos apilados */
+        padding: 20px;
+    }
+    .step-number {
+        font-size: 2.5em;
+        height: 70px;
+    }
+    .step-item h3 {
+        font-size: 1.3em;
+    }
+    .step-item p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .patient-process-section {
+        padding: 40px 15px;
+        margin-bottom: 30px;
+    }
+    .patient-process-section h2 {
+        font-size: 28px;
+    }
+    .patient-process-section p {
+        font-size: 0.9em;
+        margin-bottom: 25px;
+    }
+    .step-item {
+        min-width: unset; /* Reiniciar min-width */
+        max-width: 100%; /* Ocupar todo el ancho disponible */
+        padding: 15px;
+    }
+    .step-number {
+        font-size: 2em;
+        height: 60px;
+    }
+    .step-item h3 {
+        font-size: 1.1em;
+    }
+    .step-item p {
+        font-size: 0.9em;
+    }
+}
+
+/* --- Sección de Resultados de Pacientes --- */
+.patient-results-section {
+    padding: 60px 20px;
+    background-color: #f8f8f8; /* Fondo similar a otras secciones destacadas */
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 50px auto; /* Centra y añade espacio inferior */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.patient-results-section h2 {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 40px; /* Espacio debajo del título */
+}
+
+.results-slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Ancho máximo para el slider cuadrado */
+    margin: 0 auto;
+    overflow: hidden; /* Oculta partes de los slides que se salgan */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.results-slides-container {
+    display: flex; /* Usar flexbox para los slides */
+    transition: transform 0.5s ease-in-out; /* Transición para el movimiento del slide */
+}
+
+.results-slide {
+    flex: 0 0 100%; /* Cada slide ocupa el 100% del contenedor y no se encoge */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Apila imagen y descripción */
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    height: 600px; /* Altura fija para el slide para mantenerlo cuadrado */
+}
+
+.results-slide img {
+    width: 100%;
+    height: 400px; /* Altura fija para la imagen */
+    object-fit: cover; /* Recorta la imagen para cubrir el área sin distorsionar */
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.results-description h3 {
+    font-size: 1.8em;
+    color: #00cfff; /* Color de acento */
+    margin-bottom: 10px;
+}
+
+.results-description p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.5;
+}
+
+.results-slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.results-slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.results-slider-btn.prev {
+    left: 10px;
+}
+
+.results-slider-btn.next {
+    right: 10px;
+}
+
+.results-dots-container {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.results-dot {
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.results-dot.active {
+    background-color: #717171;
+}
+
+/* Responsive adjustments for patient results section */
+@media (max-width: 992px) {
+    .patient-results-section h2 {
+        font-size: 36px;
+    }
+    .results-slide {
+        height: 550px; /* Ajustar un poco para pantallas medianas */
+    }
+    .results-slide img {
+        height: 350px;
+    }
+}
+@media (max-width: 768px) {
+    .patient-results-section h2 {
+        font-size: 32px;
+    }
+    .results-slider {
+        max-width: 100%; /* Ocupa todo el ancho disponible */
+    }
+    .results-slide {
+        height: 500px; /* Reducir altura para móviles */
+        padding: 15px;
+    }
+    .results-slide img {
+        height: 300px; /* Reducir altura de imagen */
+        margin-bottom: 15px;
+    }
+    .results-description h3 {
+        font-size: 1.5em;
+    }
+    .results-description p {
+        font-size: 1em;
+    }
+    .results-slider-btn {
+        padding: 8px 12px;
+        font-size: 18px;
+    }
+    .results-dot {
+        height: 10px;
+        width: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .patient-results-section {
+        padding: 40px 15px;
+    }
+    .patient-results-section h2 {
+        font-size: 28px;
+    }
+    .results-slide {
+        height: 400px; /* Más pequeña para pantallas muy pequeñas */
+        padding: 10px;
+    }
+    .results-slide img {
+        height: 200px;
+    }
+    .results-description h3 {
+        font-size: 1.3em;
+    }
+    .results-description p {
+        font-size: 0.9em;
+    }
+}
+
+
+/* Sección de Promoción de Redes Sociales */
+.social-promo {
+    background-color: #f8f8f8;
+    padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.social-promo-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+    text-align: center;
+}
+
+.social-promo-content h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.social-icons-large {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-icons-large i {
+    color: #00cfff; /* Color de los iconos */
+    transition: color 0.3s ease;
+}
+
+.social-icons-large a { /* Asegura que los enlaces no tengan un estilo de texto por defecto */
+    text-decoration: none;
+}
+
+.social-icons-large .fa-instagram {
+    color: #E1306C; /* Color original de Instagram */
+}
+
+.social-icons-large .fa-whatsapp {
+    color: #25D366; /* Color original de WhatsApp */
+}
+
+.social-icons-large i:hover {
+    opacity: 0.8; /* Un efecto de hover más sutil */
+}
+
+.social-promo-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+    text-align: center;
+}
+
+.social-promo-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Sección de Área Destacada */
+.featured-area {
+    padding: 60px 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 50px auto; /* Centra la sección y añade espacio abajo */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+.featured-area h2 {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.featured-area p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.featured-images {
+    display: flex; /* Para que las imágenes se muestren en fila */
+    flex-wrap: wrap; /* Para que las imágenes se ajusten a pantallas pequeñas */
+    gap: 15px; /* Espacio entre las imágenes */
+    justify-content: center; /* Centrar las imágenes */
+    margin-top: 15px; /* Espacio superior para separar del texto */
+}
+
+.featured-images img {
+    /* Ajustes para evitar que la imagen se recorte y se muestre completa */
+    width: auto; /* Permite que la imagen tome su ancho natural o se ajuste proporcionalmente */
+    max-width: 150px; /* Establece un ancho máximo para no ser demasiado grande */
+    height: 100px; /* Establece una altura fija para todas las imágenes */
+    object-fit: contain; /* Asegura que la imagen completa sea visible dentro de las dimensiones, sin recortarse */
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para un mejor aspecto */
+}
+
+/* Media query para pantallas más pequeñas si es necesario ajustar el tamaño de las imágenes */
+@media (max-width: 768px) {
+    .featured-images img {
+        height: 80px; /* Reducir la altura de las imágenes en móviles */
+        max-width: 100px; /* Reducir el ancho máximo en móviles */
+    }
+}
+
+
+/* Sección de Preguntas Frecuentes */
+.faq-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Añadido un poco de sombra como en service-highlight */
+}
+
+.faq-section h2 { /* Título principal del FAQ */
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.faq-section p { /* Subtítulo del FAQ */
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* --- Estilos para el FAQ Acordeón --- */
+.faq-grid {
+    display: block;
+    gap: 0;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.faq-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.faq-item h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.faq-item:last-child h3 {
+    border-bottom: none;
+}
+
+.faq-item h3 i {
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+
+.faq-item.active h3 {
+    background-color: #f0f0f0;
+}
+
+.faq-item.active h3 i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    padding: 0 20px;
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+.faq-answer p {
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 600px; /* Suficientemente grande para contener la respuesta (ajustar si es necesario) */
+    padding: 15px 20px; /* Padding cuando está abierto */
+}
+
+
+/* Nuevo estilo para los spans de la sección social-promo */
+.social-promo-content p span {
+    font-weight: bold;
+    color: #333; /* O un color que prefieras para el texto resaltado */
+}

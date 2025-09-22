@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verpies Podología Clínica & REFLEXOLOGIA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div class="top-bar">
+        <div class="contact-info">
+            <img src="fotos/icono_telefono.jpg" alt="Teléfono" style="width: 20px; vertical-align: middle; margin-right: 8px;"> +56 9 8600 6511
+            <a href="mailto:verpies155@gmail.com"><img src="fotos/icono_correo.jpg" alt="Correo" style="width: 20px; vertical-align: middle; margin-left: 15px; margin-right: 10px;"> verpies155@gmail.com</a>
+        </div>
+        <div class="social-icons">
+            <img src="fotos/icono_horario.jpg" alt="Horario" style="width: 20px; vertical-align: middle; margin-right: 4px;"> Lun a Vie: 09:00 a 20:00 hrs | Sab 09:00 a 14:00 | Dom: Cerrado | SOS hasta las 21:00 hrs
+        </div>
+    </div>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="fotos/LogoVerPies.png" alt="Logo Verpies" class="logo-img">
+            Verpies <span>Podología Clínica & Salud Integral</span>
+        </div>
+        <nav>
+    <ul>
+        <li><a href="#inicio">INICIO</a></li>
+        <li><a href="#nosotros">NOSOTROS</a></li>
+        <li><a href="#faq">PREGUNTAS FRECUENTES</a></li>
+    </ul>
+</nav>
+        <div class="buttons">
+            <a href="https://www.instagram.com/v_verpies/" target="_blank" class="btn-icon instagram"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://wa.me/56986006511" target="_blank" class="btn-icon whatsapp"><i class="fab fa-whatsapp fa-2x"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="slides-container">
+                <div class="hero-slide active" data-background="fotos/Foto1.jpg">
+                    <div class="hero-content">
+                        <h1>Servicios de Podología Clínica</h1>
+                        <p>Corte de uña, limpieza de surcos, desepiculización, tratamiento de durezas (helomas, hiperqueratosis), hongos (Onicomicosis), pulido y masaje hidratante.</p>
+                    </div>
+                </div>
+
+                <div class="hero-slide" data-background="fotos/Foto6.png">
+                    <div class="hero-content">
+                        <h1>Reconstrucción Ungueal</h1>
+                        <p>Reconstrucción de uña</p>
+                        <ul>
+                            <li>Recuperación del correcto crecimiento de la uña.</li>
+                            <li>Proporcionar protección a una uña debilitada.</li>
+                            <li>Dar apariencia de una uña estéticamente normal.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="hero-slide" data-background="fotos/Foto3.png">
+                    <div class="hero-content">
+                        <h1>Curación y seguimiento</h1>
+                        <p>Realizamos una evaluación, limpieza, desinfección, control y seguimiento.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
+            <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
+
+            <div class="dots-container">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+
+        <section class="service-highlight" id="servicios">
+            <div class="service-highlight-content">
+                <h2>Tus Pies, Nuestra Misión.</h2>
+                <h3>Servicio De Podología Personalizado</h3>
+                <p>Contamos con los mejores podólogos.
+                Todos son certificados por el ministerio de salud.</p>
+            </div>
+            <div class="service-highlight-image">
+                <img src="fotos/Foto4.png" alt="Podólogo Personalizado">
+            </div>
+        </section>
+
+        <section class="page-hero" id="nosotros">
+            <div class="page-hero-content">
+                <h1>Sobre Nosotros</h1>
+                <p>Conoce la visión y misión de Verpies.</p>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Visión</h2>
+                    <p>Nuestra visión es ser la clínica podologica de referencia en el área
+                    de la medicina ambulatoria convirtiéndonos en un centro líder en el
+                    sector. Ser una clínica reconocida por su calidad y excelencia en el
+                    servicio al cliente, manteniendo así nuestro liderazgo en el mercado.</p>
+                </div>
+                <div class="about-image">
+                    <img src="fotos/Edificio.png" alt="Visión de Verpies">
+                </div>
+            </div>
+
+            <div class="about-content reverse-layout">
+                <div class="about-image">
+                    <img src="fotos/recepcion.png" alt="Misión de Verpies">
+                </div>
+                <div class="about-text">
+                    <h2>Misión</h2>
+                    <p>Aplicar y transformar el conocimiento de los profesionales altamente
+                    calificados en valor para el beneficio de los clientes y así prestar una
+                    atención podologica de calidad y personalizada en beneficio de cada uno
+                    de nuestros pacientes.</p>
+                </div>
+            </div>
+        </section>
+
+<section class="full-width-image" id="fullWidthSlider">
+    <div class="slides-container-fw">
+        <div class="full-width-slide fw-active" data-background="fotos/Foto7.png">
+            <div class="full-width-image-content">
+                <h2>Atención Podológica 100% Personalizada</h2>
+            </div>
+        </div>
+        <div class="full-width-slide" data-background="fotos/Foto5.png">
+            <div class="full-width-image-content">
+                <h2>¡Y con una vista increible!</h2>
+            </div>
+        </div>
+    </div>
+    <button class="slider-btn-fw prev" onclick="moveFwSlide(-1)">❮</button>
+    <button class="slider-btn-fw next" onclick="moveFwSlide(1)">❯</button>
+
+    <div class="dots-container-fw">
+        <span class="dot-fw fw-active" onclick="currentFwSlide(1)"></span>
+        <span class="dot-fw" onclick="currentFwSlide(2)"></span>
+    </div>
+</section>
+
+        <section class="patient-process-section" id="proceso">
+            <div class="container">
+                <h2>Tu Experiencia en Verpies: Paso a Paso</h2>
+                <p>Desde tu llegada hasta tu recuperación, te acompañamos en cada etapa.</p>
+                <div class="process-steps">
+                    <div class="step-item">
+                        <div class="step-number"><i class="fas fa-calendar-alt"></i></div>
+                        <h3>Agendar Hora</h3>
+                        <p>Contacta con nosotros vía WhatsApp para reservar tu cita.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number"><i class="fas fa-clipboard-list"></i></div>
+                        <h3>Evaluación Inicial</h3>
+                        <p>Nuestros especialistas realizan un diagnóstico completo de tus pies.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number"><i class="fas fa-hand-holding-medical"></i></div>
+                        <h3>Tratamiento Personalizado</h3>
+                        <p>Aplicamos el plan de tratamiento más adecuado para tus necesidades.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number"><i class="fas fa-walking"></i></div>
+                        <h3>Seguimiento y Cuidado</h3>
+                        <p>Te ofrecemos recomendaciones y seguimiento para mantener la salud de tus pies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="patient-results-section" id="resultados">
+            <h2>Resultados de Pacientes</h2>
+            <div class="results-slider">
+                <div class="results-slides-container">
+                    <div class="results-slide">
+                        <img src="fotos/PacienteA.png" alt="Resultado Paciente 1">
+                        <div class="results-description">
+                            <h3>Gránuloma</h3>
+                            <p>Paciente diabético que presenta uña encarnada acompañada de un gránuloma en la zona afectada.</p>
+                        </div>
+                    </div>
+                    <div class="results-slide">
+                        <img src="fotos/PacienteB.png" alt="Resultado Paciente 2">
+                        <div class="results-description">
+                            <h3>Onicomicosis</h3>
+                            <p>Paciente con onicomicosis. Se realizaron técnicas avanzadas de podología para el manejo de la afección.</p>
+                        </div>
+                    </div>
+                    <div class="results-slide">
+                        <img src="fotos/PacienteC.png" alt="Resultado Paciente 3">
+                        <div class="results-description">
+                            <h3>Pie de atleta</h3>
+                            <p>Paciente con pie de atleta, logró resolución completa del cuadro en 2 semanas tras el tratamiento indicado.</p>
+                        </div>
+                    </div>
+                    <div class="results-slide">
+                        <img src="fotos/PacienteD.png" alt="Resultado Paciente 4">
+                        <div class="results-description">
+                            <h3>Instalacion de brackets</h3>
+                            <p>Procedimiento de instalación de brackets realizado con éxito.</p>
+                        </div>
+                    </div>
+                    <div class="results-slide">
+                        <img src="fotos/PacienteE.png" alt="Resultado Paciente 5">
+                        <div class="results-description">
+                            <h3>Extracción de heloma</h3>
+                            <p>Extracción de heloma con manejo cuidadoso y estricto control de la zona.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="results-slider-btn prev" onclick="moveResultsSlide(-1)">❮</button>
+                <button class="results-slider-btn next" onclick="moveResultsSlide(1)">❯</button>
+                <div class="results-dots-container">
+                    <span class="results-dot active" onclick="currentResultsSlide(1)"></span>
+                    <span class="results-dot" onclick="currentResultsSlide(2)"></span>
+                    <span class="results-dot" onclick="currentResultsSlide(3)"></span>
+                    <span class="results-dot" onclick="currentResultsSlide(4)"></span>
+                    <span class="results-dot" onclick="currentResultsSlide(5)"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-promo">
+            <div class="social-promo-content">
+                <h2>¿Quieres cuidar tus pies y agendar tu hora fácilmente?</h2>
+                <p><span>● En Instagram</span> compartimos tips y consejos útiles para tu salud podológica.</p>
+                <p><span>● En WhatsApp</span> puedes hacer tus reservas de forma rápida y directa.</p>
+                <p>👣 ¡Conéctate con nosotros y da el primer paso hacia el bienestar!</p>
+                <div class="social-icons-large">
+                    <a href="https://www.instagram.com/v_verpies/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/56986006511" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="social-promo-image">
+                <img src="fotos/iPhone.png" alt="Síguenos en Redes Sociales">
+            </div>
+        </section>
+
+        <section class="featured-area">
+            <h2>Área Destacada</h2>
+            <p>Además contamos con convenio para el Cuerpo de Bomberos de Maipú, la Municipalidad de Maipú y Cesfam Maipú.</p>
+            <div class="featured-images">
+                <img src="fotos/Bomberos.png" alt="Convenio Cuerpo de Bomberos de Maipú">
+                <img src="fotos/Municipalidad.png" alt="Convenio Municipalidad de Maipú">
+                <img src="fotos/Cesfam.png" alt="Convenio CESFAM">
+                <img src="fotos/ClubBeneficios.png" alt="Otro Convenio">
+            </div>
+        </section>
+
+        <section class="faq-section" id="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <p>Tenemos la respuesta que necesitas</p>
+            <div class="faq-grid">
+                <div class="faq-item">
+    <h3>1. ¿Dónde Están Ubicados? <i class="fa-solid fa-chevron-down"></i></h3>
+    <div class="faq-answer">
+        <p>📍 General Ordóñez 155, Oficina 1503 – Maipú, Santiago.</p>
+        <div style="width:100%;max-width:700px;margin:20px auto;">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.165473317488!2d-70.75859948915398!3d-33.50852175622701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662dcd35c1e1ae5%3A0xbea33df3b27749f9!2sPodolog%C3%ADa%20Clin%C3%ADca%20%26%20REFLEXOLOGIA%20VERPIES!5e0!3m2!1ses-419!2scl!4v1753738558500!5m2!1ses-419!2scl"
+                width="100%" height="350" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</div>
+                <div class="faq-item">
+                    <h3>2. ¿Existe Algún Metro Cerca? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>🚇 Sí, estamos a pasos del Metro Plaza de Maipú (Línea 5).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>3. ¿Qué Tipos de Servicios Hay? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>🦶 Ofrecemos atención en:</p>
+                        <ul>
+                            <li>Podología clínica.</li>
+                            <li>Tratamiento para pacientes diabéticos.</li>
+                            <li>Técnicas avanzadas para el cuidado del pie.</li>
+                            <li>Manejo de uña encarnada.</li>
+                            <li>Extracción de helomas (con derivación a cirugía si es necesario). Atención coordinada con centro médico.</li>
+                            <li>Eliminación de hongos.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>4. ¿Cuáles Son Las Formas De Pago? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>💳 Aceptamos todos los métodos de pago: tarjetas de débito y crédito, transferencias bancarias y pagos en efectivo.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>5. ¿Disponen De Estacionamiento? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>🚗 Sí, contamos con estacionamiento para nuestros pacientes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>6. ¿Las Podólogas Están Certificadas? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>📄 Sí, nuestras podólogas están debidamente certificadas y capacitadas para brindar atención profesional y segura.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>7. ¿Utilizan materiales y tecnología de punta en los tratamientos? <i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>💡 Sí, en nuestra clínica trabajamos con materiales de alta calidad y tecnología de última generación, lo que nos permite ofrecer tratamientos más precisos, seguros y efectivos. Nos mantenemos actualizados constantemente para garantizar a nuestros pacientes una atención moderna y confiable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Verpies Podología Clínica. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+    // Función para establecer la clase 'active' en el enlace del menú de navegación correspondiente a la sección actual
+    function setActiveMenu() {
+        // Remueve la clase 'active' de todos los enlaces del menú
+        document.querySelectorAll('.navbar nav ul li a').forEach(el => el.classList.remove('active'));
+        // Obtiene el hash de la URL o establece '#inicio' por defecto
+        const hash = window.location.hash || '#inicio';
+        // Encuentra el enlace del menú que coincide con el hash actual
+        const activeLink = document.querySelector('.navbar nav ul li a[href=\"' + hash + '\"]');
+        // Si se encuentra el enlace, añade la clase 'active'
+        if (activeLink) activeLink.classList.add('active');
+    }
+    // Llama a setActiveMenu cuando el contenido del DOM se ha cargado completamente
+    window.addEventListener('DOMContentLoaded', setActiveMenu);
+    // Llama a setActiveMenu cuando cambia el hash de la URL (navegación entre secciones)
+    window.addEventListener('hashchange', setActiveMenu);
+    // Añade un event listener a cada enlace del menú
+    document.querySelectorAll('.navbar nav ul li a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Cuando se hace clic en un enlace, remueve la clase 'active' de todos los enlaces
+            document.querySelectorAll('.navbar nav ul li a').forEach(el => el.classList.remove('active'));
+            // Añade la clase 'active' al enlace en el que se hizo clic
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
